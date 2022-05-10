@@ -19,21 +19,25 @@
 </head>
 <body>
     <div id="app">
-        {{ 2 + 2 }}
-        <input :value="2 + 2" :class="teste ? 'verde' : estilo">
-        <p>Tamanho: {{mensagem.length}}</p>
+        <p>Pode-se utilizar v-on: ou @</p>
+        <input type="text" @keyup="imprimirTexto()">
+        <button @click="mensagemAlerta()">Botão</button>
+        <button v-on:click="mensagemAlerta()">Botão</button>
     </div>
 
     <script>
 
         const vm = new Vue({
             el: '#app',
-            data: {
-                mensagem: 'Expressão',
-                estilo: 'azul',
-                teste: true
-            },
-            methods: {}
+            data: {},
+            methods: {
+                imprimirTexto() {
+                    console.log('Teste')
+                },
+                mensagemAlerta() {
+                    alert('Mensagem de alerta')
+                }
+            }
         })
 
     </script>
