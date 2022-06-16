@@ -1,0 +1,5 @@
+- Single File Component 
+template(obrigatorio), script, style. Sempre extensão vue. Utiliza PascalCase
+
+
+- Compoenent Topo e Conteudo
