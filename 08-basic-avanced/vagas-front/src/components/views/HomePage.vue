@@ -8,14 +8,7 @@
 
     <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
       <div class="col">
-        <vaga-component 
-          :titulo-vaga-teste="vaga.titulo"
-          :descricao-vaga="vaga.descricao"
-          :salario="vaga.salario"
-          :modalidade="vaga.modalidade"
-          :tipo="vaga.tipo"
-          :publicacao="vaga.publicacao"
-        />
+        <vaga-component v-bind="vaga"/>      
       </div>
     </div>
 
@@ -49,7 +42,8 @@ export default {
   },
   data: () => ({
     usuariosOnline: 0,
-     vagas: [
+    vagas: [],
+     /*vagas: [
       {
         titulo: 'Analista Programador PHP Pleno',
         descricao: 'Profissional com conhecimentos em PHP, Laravel e MySQL. Necessário 3 anos de experiências. Atuará na manutenção de sistemas legados da empresa.',
@@ -90,7 +84,7 @@ export default {
         tipo: 'CLT',
         publicacao: '2021-10-05'
       }
-    ]
+    ]*/
   }),
   methods: {
     getUsuariosOnline() {
@@ -99,7 +93,11 @@ export default {
   },
   created() {
     setInterval(this.getUsuariosOnline, 1000) //a cada 1 segundo
+  },
+  activated() {
+    this.vagas = JSON.parse(localStorage.getItem('vagas'))
   }
+
 }
 </script>
 

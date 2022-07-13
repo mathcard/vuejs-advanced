@@ -1,18 +1,24 @@
 <template>        
   <TopoCompoent />
-  <ConteudoComponent/>    
+  <ConteudoComponent/>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
+
 import ConteudoComponent from '@/components/layouts/ConteudoComponent.vue'
 import TopoCompoent from '@/components/layouts/TopoCompoent.vue'
 
-
 export default {
   name: 'App',
+  data: () => ({
+    visibilidade: true
+  }),
+  methods: {
+    desmontarComponente() {
+      this.visibilidade = false
+    }
+  },
   components: {
-  //  HelloWorld,
     ConteudoComponent,
     TopoCompoent
   }

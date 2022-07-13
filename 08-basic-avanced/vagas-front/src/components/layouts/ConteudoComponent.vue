@@ -1,17 +1,21 @@
 <template>
-  <div>
-    <HomePage/>
-    <PublicarVaga/>
-    <p :class="$style['teste1']">{{titulo}}</p>    
-    <button @click="atualizarComponent()">Update</button>
+   <div>
+    <h1>{{titulo}}</h1>
+    <button @click="atualizarComponente()">Atualizar</button>
+    <button @click="conteudo = 'home-page'">Home</button>
+    <button @click="conteudo = 'publicar-vaga'">Publicar Vaga</button>
+    <!-- renderizar de modo dinâmico os componentes home e publicar-vaga -->
+    <!--<home></home>-->
+    <!--<publicar-vaga></publicar-vaga>-->
+    <keep-alive>
+      <component :is="conteudo" />
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import HomePage from '@/components/views/HomePage.vue'
 import PublicarVaga from '@/components/views/PublicarVaga.vue'
-
-
 
 export default {
     name: "ConteudoComponent",    
@@ -21,11 +25,12 @@ export default {
   },
   data: () => ({
     teste: 'O component foi criado',
-    titulo: 'Component Conteudo'
+    titulo: 'Component Conteudo',
+    conteudo: 'home'
   }),
    methods: {
     atualizarComponent() {
-      this.titulo += 'Compoenente Atualizado'
+      this.titulo += '*'
     }
   },
   beforeCreate() {
