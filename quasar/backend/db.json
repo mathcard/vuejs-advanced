@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first title",
+      "author": "Math Card",
+      "content": "API REST"
+    },
+    {
+      "title": "titulo ",
+      "content": "eu me zzz<div>a</div>",
+      "author": "autor",
+      "id": 2
+    },
+    {
+      "title": "test3",
+      "content": "ewt",
+      "author": "test",
+      "id": 3
+    },
+    {
+      "title": "teste4",
+      "content": "ewtwe",
+      "author": "etse",
+      "id": 4
+    },
+    {
+      "title": "titulo 78",
+      "content": "teste do carmo",
+      "author": "Eurico Miranda",
+      "id": 5
+    }
+  ]
+}
